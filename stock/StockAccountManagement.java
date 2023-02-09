@@ -19,5 +19,16 @@ public class StockAccountManagement {
             stockPortfolio.readStockData(index + 1);
         }
         stockPortfolio.calculateStock();
+
+        while (true) {
+
+            System.out.print("\n Enter a positive number to withdraw amount, to exit press 0 : ");
+            int var = (scanner.nextInt() > 0) ? stockPortfolio.debit() : 0;
+            if (var == 0) {
+                System.out.println("Process Terminated.");
+                return;
+            }
+        }
     }
+
 }
